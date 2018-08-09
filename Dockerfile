@@ -4,7 +4,7 @@ LABEL maintainer="lucacri@gmail.com"
 
 RUN apk upgrade --update-cache && \
     apk update && \
-    apk add python3 && \
+    apk add bash python3 && \
     ln -s /usr/bin/pip3 /usr/bin/pip && \
     pip install --upgrade pip && \
     pip3 install mkdocs && \

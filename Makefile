@@ -1,5 +1,5 @@
 TAG ?= latest
-IMAGE := lucacri/docker-mkdocs-nginx
+IMAGE := lucacri/docker-mkdocs
 
 build:
 	@echo "------------------"
