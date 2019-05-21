@@ -1,6 +1,6 @@
 # docker-mkdocs
 
-This image lets you build a mkdocs folder. 
+This image lets you build a mkdocs folder.
 
 Check the file `example-dockerfile.yaml` to see an example of how it could be used in a multistage build.
 
