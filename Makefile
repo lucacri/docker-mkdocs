@@ -53,3 +53,6 @@ all:
 	@$(MAKE) -f $(THIS_FILE) build
 	@$(MAKE) -f $(THIS_FILE) tag
 	@$(MAKE) -f $(THIS_FILE) push
+
+all-last-tag:
+	@$(MAKE) -f $(THIS_FILE) TAG=`git describe --tags $(git rev-list --tags --max-count=1)` all
