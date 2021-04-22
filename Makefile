@@ -1,9 +1,10 @@
 TAG ?= latest
 IMAGE := lucacri/docker-mkdocs
 
-VMAJOR=`semver get major ${TAG}`
-VMINOR=`semver get minor ${TAG}`
-VPATCH=`semver get patch ${TAG}`
+VMAJOR=`semver-cli get major ${TAG}`
+VMINOR=`semver-cli get minor ${TAG}`
+VPATCH=`semver-cli get patch ${TAG}`
+
 THIS_FILE := $(lastword $(MAKEFILE_LIST))
 
 build:
@@ -13,8 +14,9 @@ build:
 	@echo "------------------"
 	@echo ""
 	@echo ""
-	@docker build --pull -t ${IMAGE}:${TAG} .
+	@docker build -t ${IMAGE}:${TAG} .
 	@docker tag ${IMAGE}:${TAG} ${IMAGE}:latest
+
 
 push:
 	@echo "------------------"
