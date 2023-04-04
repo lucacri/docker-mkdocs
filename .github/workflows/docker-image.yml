@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: GitHub Tag Name example
         run: |
-         echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME"
-         echo "Tag name from github.ref_name: ${{  github.ref_name }}"
+          echo "Tag name from GITHUB_REF_NAME: $GITHUB_REF_NAME"
+          echo "Tag name from github.ref_name: ${{  github.ref_name }}"
       - uses: actions/checkout@v3
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -32,5 +32,5 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6
           push: true
           tags: |
-            lucacri/docker-mkdocs:${{ env.GITHUB_REF_NAME }}
+            lucacri/docker-mkdocs:${{ github.ref_name }}
             lucacri/docker-mkdocs:latest
