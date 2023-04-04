@@ -17,6 +17,14 @@ build:
 	@docker build -t ${IMAGE}:${TAG} .
 	@docker tag ${IMAGE}:${TAG} ${IMAGE}:latest
 
+build-multi:
+	@echo "------------------"
+	@echo "BUILDING MULTI-ARCH: "
+	@echo "${IMAGE}:${TAG}"
+	@echo "------------------"
+	@echo ""
+	@echo ""
+	@docker buildx build --platform linux/amd64 --push --tag ${IMAGE}:${TAG} --tag ${IMAGE}:latest .
 
 push:
 	@echo "------------------"
